@@ -1,0 +1,105 @@
+@import "src/scss/utils/variables";
+@import "src/scss/utils/mixins";
+
+.product-cards {
+  margin-bottom: 66px;
+}
+
+.product-cards__list {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+.product-cards__item {
+
+}
+
+.product-cards__item-link {
+  display: flex;
+  flex-direction: column;
+
+  color: #000;
+  text-decoration: none;
+  background-color: $lightgrey;
+}
+
+.product-cards__item-image {
+  width: 100%;
+  padding: 16px;
+  padding-top: 0;
+  background-color: $lightgrey;
+}
+
+.product-cards__item-info {
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px;
+  padding-top: 0;
+
+  text-align: center;
+}
+
+.product-cards__item-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.product-cards__item-brand {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.product-cards__item-name {
+  color: rgba($color: #000000, $alpha: 0.5);
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 300;
+}
+
+.product-cards__item-price {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+
+
+// ====================================== TABLET ======================================
+@media (min-width: $tablet-width) {
+  .product-cards {
+    margin-bottom: 0;
+  }
+
+  .product-cards__list {
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+  .product-cards__item-image {
+    padding: 24px;
+    padding-top: 0;
+  }
+
+  .product-cards__item-info {
+    padding: 24px;
+    padding-top: 0;
+  }
+}
+
+
+
+// ==================================== DESKTOP ====================================
+@media (min-width: $desktop-width) {
+  .product-cards__list {
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  }
+}

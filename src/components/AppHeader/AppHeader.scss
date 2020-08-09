@@ -1,0 +1,79 @@
+@import "src/scss/utils/mixins";
+@import "src/scss/utils/variables";
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  min-height: $header-height-mobile;
+
+  background-color: #fff;
+  box-shadow: 0 1px 0 0 #000;
+
+  z-index: 1000;
+}
+
+.app-header__container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: $container-side-padding-mobile;
+  padding-right: $container-side-padding-mobile;
+}
+
+.app-header__wrapper {
+  display: flex;
+  // margin: $container-fix-margin-mobile;
+}
+
+.app-header__logo-link {
+  display: flex;
+  background: bisque;
+  outline: none;
+
+  &:focus,
+  &:hover {
+    background-color: $lightgrey;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.app-header__logo-image {
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+}
+
+
+
+
+@media (min-width: $tablet-width) {
+  .app-header {
+    min-height: $header-height-tablet;
+  }
+
+  .app-header__container {
+    padding-left:  $container-side-padding-tablet;
+    padding-right:  $container-side-padding-tablet;
+  }
+
+  .app-header__logo-image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+
+@media (min-width: $desktop-width) {
+  .app-header__container {
+    max-width: 1200px;
+    padding-left: $container-side-padding-desktop;
+    padding-right: $container-side-padding-desktop;
+  }
+}

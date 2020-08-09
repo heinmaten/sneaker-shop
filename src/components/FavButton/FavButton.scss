@@ -1,0 +1,36 @@
+@import "src/scss/utils/mixins";
+@import "src/scss/utils/variables";
+
+.favorite-button {
+  @include reset-button;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  &:hover,
+  &:focus {
+    background-color: #f2f2f2;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .favorite-button {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .favorite-button {
+    width: 70px;
+    height: 70px;
+  }
+}

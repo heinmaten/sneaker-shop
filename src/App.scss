@@ -1,0 +1,40 @@
+@import "src/scss/utils/variables";
+@import "src/scss/utils/mixins";
+
+.app-main {
+  padding-top: $header-height-mobile;
+  min-height: 100%;
+}
+
+.app-main__container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1200px - 48px;
+  height: 400px;
+  margin: 0 auto;
+  background-color: tomato;
+}
+
+@media (min-width: $tablet-width) {
+  .app-main {
+    padding-top: $header-height-tablet;
+  }
+
+  .app-main__container {
+    padding: 24px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .app-main__container {
+    max-width: 1200px;
+  }
+}

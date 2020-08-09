@@ -1,0 +1,83 @@
+@import "src/scss/utils/mixins";
+@import "src/scss/utils/variables";
+
+.tabs {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.tabs__list {
+  position: relative;
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tabs__list-item {
+  display: flex;
+  position: relative;
+}
+
+.tabs__button {
+  @include reset-button;
+  display: block;
+
+  width: 100%;
+  height: 44px;
+
+  color: #000;
+  font-size: 14px;
+
+  &:not(&--active):hover,
+  &:not(&--active):focus {
+    background-color: #f2f2f2;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &--active {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+.tabs__button--active {
+  &:hover,
+  &:focus {
+
+  }
+}
+
+.tabs__description {
+  margin: 0;
+  padding: 8px;
+
+  font-size: 14px;
+  text-align: justify;
+
+  border: 1px solid #000;
+}
+
+
+
+
+@media(min-width: $tablet-width) {
+  .tabs {
+    border: none;
+    margin-top: 12px;
+  }
+
+  .tabs__button {
+    height: 50px;
+  }
+}
+
+
+
+
+@media(min-width: $desktop-width) {
+
+}

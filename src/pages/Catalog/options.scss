@@ -1,0 +1,70 @@
+@import "src/scss/utils/variables";
+@import "src/scss/utils/mixins";
+
+.options {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  right: 0;
+
+  border-bottom: 1px solid #000;
+}
+
+.options__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.options__filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+
+  background-color: darkseagreen;
+}
+
+.options__sorting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+
+  background-color: bisque;
+}
+
+
+
+
+// ====================================== TABLET ======================================
+@media (min-width: $tablet-width) {
+  .options {
+    position: static;
+    border: none;
+  }
+
+  .options__wrapper {
+    position: sticky;
+    top: 74px;
+
+    grid-template-columns: none;
+    grid-template-rows: max-content 1fr;
+    row-gap: 24px;
+  }
+
+  .options__filters {
+    height: 500px;
+  }
+
+  .options__sorting {
+    order: -1;
+  }
+}
+
+
+
+
+// ==================================== DESKTOP ====================================
+@media (min-width: $desktop-width) {
+
+}

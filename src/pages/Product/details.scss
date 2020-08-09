@@ -1,0 +1,177 @@
+@import "src/scss/utils/mixins";
+@import "src/scss/utils/variables";
+
+.details {
+  margin-bottom: 220px;
+}
+
+.details__container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 8px;
+
+  height: 100%;
+}
+
+.details__info {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  column-gap: 16px;
+
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+.details__title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-weight: 400;
+}
+
+.details__brand {
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.details__name {
+  color: rgba($color: #000000, $alpha: 0.5);
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 300;
+}
+
+.details__price {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+// ==================================== SIZE ====================================
+.details__size {
+  width: 100%;
+}
+
+.details__size-list {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(62px, 1fr));
+  row-gap: 8px;
+  column-gap: 8px;
+}
+
+.details__size-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details__size-label {
+  width: 100%;
+  height: 44px;
+
+  cursor: pointer;
+}
+
+.details__size-radio {
+  &:hover,
+  &:focus {
+    &+.details__size-text {
+      background-color: #f2f2f2;
+    }
+  }
+
+  &:active {
+    &+.details__size-text {
+      opacity: 0.5;
+    }
+  }
+
+  &:checked {
+    &+.details__size-text {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+}
+
+.details__size-text {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 12px;
+
+  font-size: 14px;
+  line-height: 44px;
+  text-align: center;
+
+  // background-color: $lightgrey;
+  border: 1px solid #000;
+}
+
+.details__size-code {
+  padding-left: 4px;
+  text-transform: uppercase;
+}
+
+
+// ===================================== TABLET =====================================
+@media(min-width: $tablet-width) {
+  .details {
+    margin-bottom: 0;
+  }
+
+  .details__container {
+    position: sticky;
+    top: 50px;
+
+    grid-template-rows: auto auto auto 1fr;
+    row-gap: 12px;
+  }
+
+  .details__info {
+    position: sticky;
+    top: 50px;
+
+    column-gap: 12px;
+
+    margin-top: -24px;
+    margin-bottom: -12px;
+    padding: 0;
+    padding-top: 24px;
+    padding-bottom: 12px;
+
+    background-color: #fff;
+    border-bottom: 1px solid #000;
+
+    z-index: 100;
+  }
+
+  .details__brand {
+    margin-bottom: 12px;
+  }
+
+  .details__size-list {
+    row-gap: 12px;
+    column-gap: 12px;
+  }
+
+  .details__size-label {
+    height: 50px;
+  }
+
+  .details__size-text {
+    line-height: 50px;
+  }
+}
+
+
+
+// ================================== DESKTOP ===================================
+@media(min-width: $desktop-width) {
+  .details__size-list {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  }
+
+}

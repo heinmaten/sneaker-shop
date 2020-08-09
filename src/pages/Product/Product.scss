@@ -1,0 +1,23 @@
+@import "src/scss/utils/mixins";
+@import "src/scss/utils/variables";
+
+@import "./media.scss";
+@import "./details.scss";
+@import "./tabs.scss";
+@import "./bottom-bar.scss";
+
+.page-product {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 32px;
+
+  min-height: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .page-product {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: none;
+    column-gap: 24px;
+  }
+}
